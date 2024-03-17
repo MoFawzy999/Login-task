@@ -1,0 +1,223 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    font-family: 'poppins',sans-serif;
+    display: flex;
+    height: 100vh;
+    overflow-x: hidden;
+}
+/*part-one*/
+.part-one{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.part-one .login{
+    width: 364px;
+    height: 469px;
+}
+.part-one .login h2{
+    font-weight: 700;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.part-one .login p {
+    color: #525252;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+.part-one .login form input{
+    display: block;
+}
+.part-one .login form .user , .part-one .login form .password{
+    position: relative;
+}
+.part-one .login form .user input[type="text"],.part-one .login form .password input[type="password"]{
+    background-color: #F0EDFFCC;
+    outline: none;
+    border: none;
+    border-radius: 16px;
+    width: clamp(80%,90%,100%);
+    height: 52px;
+    margin-bottom: 24px;
+    padding-left:40px;
+}
+.part-one .login form .user input[type="text"]::placeholder,
+.part-one .login form .password input[type="password"]::placeholder{
+    color: #1C1C1C;
+}
+.part-one .login form .user input[type="text"] + i , .part-one .login form .password input[type="password"] + i{
+    position: absolute;
+    left: 20px ;
+    top: 50%;
+    color: #1C1C1C;
+    transform: translateY(-50%);
+}
+.part-one .login form input[type="submit"]{
+    margin : 0 auto 20px; 
+    color: white;
+    background: linear-gradient(to right ,#9181F4,#5038ED);
+    border: none;
+    border-radius: 16px;
+    padding: 15px 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.161);
+    cursor: pointer;
+}
+.part-one .login form div:nth-of-type(3){
+    color: #525252;
+    font-weight: 400;
+    margin-bottom: 20px;
+    position: relative;
+}
+.part-one .login form div:nth-of-type(3)::before , .part-one .login form div:nth-of-type(3)::after{
+    content : "" ;
+    position: absolute;
+    width: calc(30% + 3px);
+    height: 2px;
+    background-color:#F0EDFF ;
+    top : 50% ; 
+    transform: translateY(-50%);
+}
+.part-one .login form div:nth-of-type(3)::before{
+    left: 0;
+}
+.part-one .login form div:nth-of-type(3)::after{
+    right: 0;
+}
+.part-one .login form div:nth-of-type(3) a{
+    text-decoration: none;
+    color: #1C1C1C;
+    font-weight: bold;
+}
+.part-one .login form button{
+    display: block;
+    text-align: center;
+    margin: 0 auto 15px;
+    width: clamp(80%,90%,100%);
+    height: 52px;
+    border: 1px solid #F0EDFF;
+    border-radius: 16px;
+    background-color: transparent;
+    color: #1C1C1C;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.part-one .login form button img {
+    width: 25px ;
+    margin-right: 10px;
+}
+.part-one .login form button span{
+    font-weight: bold;
+}
+/*part-two*/
+.part-two{
+    background: url("../imgs/background.png") right bottom/cover fixed no-repeat ;
+    background-color:  #9181F4 ;
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.part-two::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(217.64deg, #9181F4 -5.84%, #5038ED 106.73%);
+    opacity: 0.7;
+}
+.part-two .content{
+    width: 412px;
+    height: 524px;
+    background-color: #FFFFFF36 ;
+    border: 1px solid #FFFFFF85;
+    border-radius: 46px;
+    position: relative;
+}
+.part-two .content p{
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: 700;
+    width: 184px;
+    margin: 25px 0 0 35px;
+    text-transform: capitalize;
+}
+.part-two .content img:first-child{
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    bottom : 100px ;
+    left: -35px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    padding: 12px;
+}
+.part-two .content img:last-child{
+    position: absolute;
+    object-fit: auto;
+    transform: scaleX(1.8);
+    height: calc(100% - 10px);
+    max-width: 100%;
+    bottom: 0;
+    right: 65px;
+}
+
+
+/*responsive*/
+@media(max-width:992px){
+.container{
+    flex-direction: column;
+}
+.part-one{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.part-two{
+    padding-top: 20px;
+    padding-bottom: 20px; 
+}
+}
+
+@media(max-width:567px){
+    .part-one .login form .user input[type="text"],
+    .part-one .login form .password input[type="password"]{
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 30px;
+    }
+    .part-one .login form .user input[type="text"] + i ,
+     .part-one .login form .password input[type="password"] + i{
+        left : 30px ;
+     }
+     .part-one .login form div:nth-of-type(3)::before , 
+     .part-one .login form div:nth-of-type(3)::after{
+        width: calc(30% - 4px);
+     }
+     .part-two .content{
+        width: 75%;
+     }
+     .part-two .content p{
+        font-size: 28px;
+     }
+     .part-two .content img:first-child{
+        width: 60px;
+        padding: 10px;
+        left: -28px;
+     }
+     .part-two .content img:last-child{
+        height: 70%;
+     }
+}
+
+
